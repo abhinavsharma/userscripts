@@ -1,3 +1,3 @@
 (function() {
-document.querySelector('#hplogoo').remove();
+document.querySelector('#qslc').remove();
 })();
