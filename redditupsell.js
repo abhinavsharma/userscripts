@@ -1,3 +1,6 @@
 (function() {
-  document.querySelector('#continueButton').click()
+  setInterval(function() {
+     document.querySelector('#continueButton').click()
+  }, 250);
+  
 })(); 
