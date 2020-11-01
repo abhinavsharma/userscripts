@@ -1,15 +1,17 @@
 (function() {
-  let url = null;
   function act() {
-    if (window.location.href != url) {
-      let v = document.querySelector('video');
-      v.addEventListener('webkitpresentationmodechanged', (e)=>e.stopPropagation(), true);
-      setTimeout(()=>v.webkitSetPresentationMode('picture-in-picture'), 3000);
-      completion()
-      url = window.location.href;
-    }
+    let v = document.querySelector('video');
+    v.addEventListener('webkitpresentationmodechanged', (e)=>e.stopPropagation(), true);
+    completion()
   }
   
-  act();
-  setInterval(act, 1000);
+  function helper() {
+    let vid = document.querySelector('video');
+    if (vid) {
+      act()
+    } else {
+      setTimeout(() => helper(), 1000)
+    }
+    
+  }
 })()
